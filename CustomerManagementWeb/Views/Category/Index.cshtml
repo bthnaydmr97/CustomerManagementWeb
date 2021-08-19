@@ -1,0 +1,70 @@
+﻿@model IList<CustomerManagementWeb.ServiceReference1.CategoryDto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<link href="~/css/style.css" rel="stylesheet">
+
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Kategoriler</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <a href="/Category/Create">
+                <button type="button" class="btn btn-secondary"> Yeni Kategori Ekle</button>
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Kategori İsmi</th>
+                            <th></th>
+
+
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Kategori İsmi</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (CustomerManagementWeb.ServiceReference1.CategoryDto item in Model)
+                        {
+                            <tr>
+                                <td>@item.CategoryName</td>
+                                <td>
+                                    <a href="/Category/Details/@item.Id">
+                                        <button type="button" class="btn btn-primary">Detay</button>
+                                    </a>
+                                    <a href="/Category/Update/@item.Id">
+                                        <button type="button" class="btn btn-warning">Düzenle</button>
+                                    </a>
+                                    <a href="/Category/Delete/@item.Id">
+                                        <button type="button" class="btn btn-danger">Sil</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+@section footer{
+    @Html.Partial("_PartialFooter")
+}

@@ -1,0 +1,103 @@
+﻿@model  CustomerManagementWeb.ServiceReference1.ProductDto
+
+@{
+    ViewBag.Title = "Update";
+    var categories = (List<SelectListItem>)ViewBag.Categories;
+}
+
+
+<link href="~/Content/form.css" rel="stylesheet" />
+
+<div class="col-6 text-left">
+    <a href="/Product/Index">
+        <button type="button" class="btn btn-warning"> Geri Dön</button>
+    </a>
+</div>
+
+<div class="container-fluid">
+    <h2 class="header-top">Ürünü Güncelle</h2>
+</div>
+
+<div class="container">
+
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="row">
+            <div class="col-10">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Ürün İsmi</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Seri Numarası</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.SerialNumber, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.SerialNumber, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Stok Adedi</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.StockQuantity, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StockQuantity, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Açıklama</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Fiyatı</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Kategori İsmi</label>
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.CategoryId, categories, new { })
+                        @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-6 text-left">
+                            <a href="/Customer/Index">
+                                <button type="button" class="btn btn-warning"> Geri Dön</button>
+                            </a>
+                        </div>
+
+                        <div class="col-6 text-right">
+                            <div class="form-group">
+                                <input type="submit" value="Güncelle" class="btn login_btn btn-primary">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

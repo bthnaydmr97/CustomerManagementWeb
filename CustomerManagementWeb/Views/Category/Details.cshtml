@@ -1,0 +1,23 @@
+﻿@model CustomerManagementWeb.ServiceReference1.CategoryDto
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <p><strong>Kategori İsmi:</strong> @Model.CategoryName</p>
+            <p><strong>Açıklaması:</strong> @Model.CategoryDescription</p>
+
+
+        </div>
+
+    </div>
+
+    <div class="col-6 text-left">
+        <a href="/Category/Index">
+            <button type="button" class="btn btn-warning"> Geri Dön</button>
+        </a>
+    </div>
+</div>

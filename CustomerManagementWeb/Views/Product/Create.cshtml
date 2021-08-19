@@ -1,0 +1,92 @@
+﻿
+@model  CustomerManagementWeb.ServiceReference1.ProductDto
+ 
+
+@{
+    ViewBag.Title = "Create";
+    var categories = (List<SelectListItem>)ViewBag.Categories;
+}
+
+
+
+<link href="~/Content/form.css" rel="stylesheet" />
+
+<div class="col-6 text-left">
+    <a href="/Product/Index">
+        <button type="button" class="btn btn-warning"> Geri Dön</button>
+    </a>
+</div>
+
+<div class="container-fluid">
+    <h2 class="header-top">Ürün Ekle</h2>
+
+</div>
+
+<div class="container">
+
+    @using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <div class="col-10">
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Ürün İsmi</label>
+                    <input type="text" name="ProductName" class="form-control" placeholder="Ürün İsmi">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Seri Numarası</label>
+                    <input type="text" name="SerialNumber" class="form-control" placeholder="Seri Numarası">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Stock Adedi</label>
+                    <input type="text" name="StockQuantity" class="form-control" placeholder="Stock Adedi">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Açıklama</label>
+                    <textarea class="form-control" name="Description" id="exampleFormControlTextarea1" placeholder="Açıklama..." rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Fiyatı</label>
+                    <input type="text" name="Price" class="form-control" placeholder="Fiyatı">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Kategori İsmi</label>
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.CategoryId, categories, new { })
+                        @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+                <br />
+                <br />
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-6 text-left">
+                            <a href="/Product/Index">
+                                <button type="button" class="btn btn-warning">Geri Dön</button>
+                            </a>
+                        </div>
+
+                        <div class="col-6 text-right">
+                            <div class="form-group">
+                                <input type="submit" value="Ekle" class="btn login_btn btn-primary">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    }
+

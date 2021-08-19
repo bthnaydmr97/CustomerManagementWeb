@@ -1,0 +1,84 @@
+﻿@model  CustomerManagementWeb.ServiceReference1.CustomerDto
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<link href="~/Content/form.css" rel="stylesheet" />
+
+<div class="col-6 text-left">
+    <a href="/Customer/Index">
+        <button type="button" class="btn btn-warning"> Geri Dön</button>
+    </a>
+</div>
+
+<div class="container-fluid">
+    <h2 class="header-top">Müşteri Ekle</h2>
+
+</div>
+
+<div class="container">
+
+    @using (Html.BeginForm("Create", "Customer", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <div class="col-10">
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Ad</label>
+                    <input type="text" name="Name" class="form-control" placeholder="Ad...">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Soyad</label>
+                    <input type="text" name="Surname" class="form-control" placeholder="Soyad...">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Telefon</label>
+                    <input type="text" name="Phone" class="form-control" placeholder="Telefon...">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">E-mail</label>
+                    <input type="text" name="Email" class="form-control" placeholder="E-mail...">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">İl/İlçe</label>
+                    <input type="text" name="City" class="form-control" placeholder="İl/İlçe...">
+
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Adres</label>
+                    <textarea class="form-control" name="Address" id="exampleFormControlTextarea1" placeholder="Adres..." rows="5"></textarea>
+                </div>
+
+                <br />
+                <br />
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-6 text-left" style="margin-bottom:100px;">
+                            <a href="/Customer/Index">
+                                <button type="button" class="btn btn-warning"> Geri Dön</button>
+                            </a>
+                        </div>
+
+                        <div class="col-6 text-right" style="margin-bottom:100px";>
+                            <div class="form-group">
+                                <input type="submit" value="Ekle" class="btn login_btn btn-primary">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    }
+</div>
+
+

@@ -1,0 +1,102 @@
+﻿@model  CustomerManagementWeb.ServiceReference1.CustomerDto
+
+@{
+    ViewBag.Title = "Update";
+}
+
+
+<link href="~/Content/form.css" rel="stylesheet" />
+
+<div class="col-6 text-left">
+    <a href="/Customer/Index">
+        <button type="button" class="btn btn-warning"> Geri Dön</button>
+    </a>
+</div>
+
+<div class="container-fluid">
+    <h2 class="header-top">Müşteri Güncelle</h2>
+</div>
+
+<div class="container">
+
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-10">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Ad</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Soyad</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Surname, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Surname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Telefon</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">E-mail</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">İl/İlçe</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Adres</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new {@class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-6 text-left">
+                    <a href="/Customer/Index">
+                        <button type="button" class="btn btn-warning"> Geri Dön</button>
+                    </a>
+                </div>
+
+                <div class="col-6 text-right">
+                    <div class="form-group">
+                        <input type="submit" value="Güncelle" class="btn login_btn btn-primary">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </div>
+    }
+
+</div>
+  

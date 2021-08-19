@@ -1,0 +1,27 @@
+﻿body {
+}
+
+
+.header-top {
+    margin: 50px;
+}
+
+
+.login_btn {
+    color: black;
+    width: 150px;
+}
+
+    .login_btn:hover {
+        color: black;
+        background-color: white;
+    }
+
+
+    .header-top{
+        color:black;
+    }
+
+.container .row .col-6 text-left{
+    margin-bottom20px;
+}

@@ -1,0 +1,21 @@
+﻿@model CustomerManagementWeb.ServiceReference1.OrderDto
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <p><strong>Müşteri İsmi</strong> @Model.CustomerName</p>
+            <p><strong>Ürün İsmi</strong> @Model.ProductName</p>
+            <p><strong>Ödeme Türü</strong> @Model.PaymentType</p>
+            <p><strong>Fiyatı</strong> @Model.OrderPrice</p>
+        </div>
+
+    </div>
+    <div class="col-6 text-left">
+        <a href="/Order/Index">
+            <button type="button" class="btn btn-warning"> Geri Dön</button>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+﻿@model CustomerManagementWeb.ServiceReference1.ProductDto
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <p><strong>Ürün İsmi:</strong> @Model.ProductName</p>
+            <p><strong>Kategori İsmi:</strong> @Model.CategoryName</p>
+            <p><strong>Seri Numarası:</strong> @Model.SerialNumber</p>
+            <p><strong>Stok Adedi:</strong> @Model.StockQuantity</p>
+            <p><strong>Fiyatı:</strong> @Model.Price</p>
+            <p><strong>Açıklaması:</strong> @Model.Description</p>
+        </div>
+
+    </div>
+
+    <div class="col-6 text-left">
+        <a href="/Product/Index">
+            <button type="button" class="btn btn-warning"> Geri Dön</button>
+        </a>
+    </div>
+</div>

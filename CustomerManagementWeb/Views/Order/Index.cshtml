@@ -1,0 +1,79 @@
+﻿
+
+
+@model IList<CustomerManagementWeb.ServiceReference1.OrderDto>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<link href="~/css/style.css" rel="stylesheet">
+
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Siparişler</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <a href="/Order/Create">
+                <button type="button" class="btn btn-secondary"> Yeni Sipariş Ekle</button>
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Müşteri İsmi</th>
+                            <th>Ürün İsmi</th>
+                            <th>Ödeme Türü</th>
+                            <th>Fiyat</th>
+                            <th></th>
+
+
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Müşteri İsmi</th>
+                            <th>Ürün İsmi</th>
+                            <th>Ödeme Türü</th>
+                            <th>Fiyat</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (CustomerManagementWeb.ServiceReference1.OrderDto item in Model)
+                        {
+                            <tr>
+                                <td>@item.CustomerName</td>
+                                <td>@item.ProductName</td>
+                                <td>@item.PaymentType</td>
+                                <td>@item.OrderPrice</td>
+                                <td>
+                                    <a href="/Order/Details/@item.Id">
+                                        <button type="button" class="btn btn-primary">Detay</button>
+                                    </a>
+                                    <a href="/Order/Delete/@item.Id">
+                                        <button type="button" class="btn btn-danger">Sil</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+@section footer{
+    @Html.Partial("_PartialFooter")
+}
+

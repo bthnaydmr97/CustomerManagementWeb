@@ -1,0 +1,7 @@
+﻿button{
+    margin:2px;
+}
+
+.table-bordered button{
+    float:right;
+}

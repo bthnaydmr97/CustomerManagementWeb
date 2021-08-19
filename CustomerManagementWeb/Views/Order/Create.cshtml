@@ -1,0 +1,87 @@
+﻿
+@model  CustomerManagementWeb.ServiceReference1.OrderDto
+
+@{
+    ViewBag.Title = "Create";
+    var products = (List<SelectListItem>)ViewBag.Products;
+    var payments = (List<SelectListItem>)ViewBag.Payments;
+    var customers = (List<SelectListItem>)ViewBag.Customers;
+}
+
+
+
+<link href="~/Content/form.css" rel="stylesheet" />
+
+<div class="col-6 text-left">
+    <a href="/Order/Index">
+        <button type="button" class="btn btn-warning"> Geri Dön</button>
+    </a>
+</div>
+
+<div class="container-fluid" style="margin-bottom:100px">
+    <h2 class="header-top">Sipariş Ekle</h2>
+
+</div>
+
+<div class="container" style="margin-bottom:150px">
+
+    @using (Html.BeginForm("Create", "Order", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <div class="col-10">
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Müşteri İsmi</label>
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.CustomerId, customers, new { })
+                        @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Ürün İsmi</label>
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.ProductId, products, new { })
+                        @Html.ValidationMessageFor(model => model.ProductId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Ödeme Tipi</label>
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.PaymentId, payments, new { })
+                        @Html.ValidationMessageFor(model => model.PaymentId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Fiyat</label>
+                    <input type="text" name="OrderPrice" class="form-control" placeholder="Fiyat">
+                </div>
+
+                <br />
+                <br />
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-6 text-left">
+                            <a href="/Order/Index">
+                                <button type="button" class="btn btn-warning">Geri Dön</button>
+                            </a>
+                        </div>
+
+                        <div class="col-6 text-right">
+                            <div class="form-group">
+                                <input type="submit" value="Ekle" class="btn login_btn btn-primary">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+  
+}
+

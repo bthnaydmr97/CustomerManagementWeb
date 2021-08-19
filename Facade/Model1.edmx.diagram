@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b4393d4d57b0482a96ac1f986a773db2" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="CustomerManagementDBModel.AdminLogin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerManagementDBModel.Customer" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CustomerManagementDBModel.Category" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="CustomerManagementDBModel.Orders" Width="1.5" PointX="6" PointY="4.375" />
+        <EntityTypeShape EntityType="CustomerManagementDBModel.Payments" Width="1.5" PointX="7" PointY="1.125" />
+        <EntityTypeShape EntityType="CustomerManagementDBModel.Product" Width="1.5" PointX="2.875" PointY="4.625" />
+        <EntityTypeShape EntityType="CustomerManagementDBModel.sysdiagram" Width="1.5" PointX="9.25" PointY="4" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
